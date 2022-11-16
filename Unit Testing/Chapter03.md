@@ -93,11 +93,11 @@
 - 테스트를 좀더 일반적으로 만들어 메개변수를 넘겨 테스트를 할 수 있음.
 - 단 부정값을 테스트하는것과 긍적값을 테스트 하는경우 하나의 테스트로 묶지 않도록 한다. 
     - 내부에서 성공 실패를 구분해야하기때문에 어찌보면 if문 없애기 원칙과도 상동.
-
+ 
 - 아래와 같은 3가지 테스트가 있을때
     Delivery_for_today_is_invalid()
     Delivery_for_tomorrow_is_invalid()
-    The_soonest_delivery_date_is_t씨o_days_from_now()
+    The_soonest_delivery_date_is_two_days_from_now()
     각 테스트는 
     Detects_an_invalid_delivery_date(int daysFromNow)
     The_soonest_delivery_date_is_two_days_from_now()
@@ -106,10 +106,10 @@
     Delivery_for_today_is_invalid() -> Detects_an_invalid_delivery_date(0)
     Delivery_for_tomorrow_is_invalid() -> Detects_an_invalid_delivery_date(1)
 
-    The_soonest_delivery_date_is_t씨o_days_from_now() -> The_soonest_delivery_date_is_two_days_from_now()
+    The_soonest_delivery_date_is_two_days_from_now() -> The_soonest_delivery_date_is_two_days_from_now()
 
     - 두개의 테스트로 분리된 이유는 테스트의 긍정값과 부정값에 대한 테스트로 나눠야한다는 지침때문임.
-- 메게변수화된 테스트는 조금이라도 테스트 동작이 복잡해질경우 사용하면 안됨.
+- 매개변수화된 테스트는 조금이라도 테스트 동작이 복잡해질경우 사용하면 안됨.
     
 ## 개인적인 정리
 - 결과적으로 테스트는 조금더 많은 코드를 작성하더라도 명료하게 읽을 수 있도록 해야한다는 것이 핵심인것같다.
